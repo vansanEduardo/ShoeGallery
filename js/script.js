@@ -10,6 +10,8 @@ const shoesName = document.querySelector("#name");
 const value = document.querySelector(".value h3");
 const content = document.querySelector(".content");
 const sizes = document.querySelectorAll(".sizes ul li");
+const openMenu = document.querySelector("#open-modal");
+const closeMenu = document.querySelector("#close-modal");
 
 let i = 0;
 
@@ -116,4 +118,15 @@ sizes.forEach((size) => {
 
     size.classList.add("select");
   });
+});
+
+// abrir menu
+
+openMenu.addEventListener("click", () => {
+  document.querySelector(".modal").style.display = "flex";
+});
+
+// fechar menu
+closeMenu.addEventListener("click", () => {
+  document.querySelector(".modal").style.display = "none";
 });

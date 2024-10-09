@@ -35,8 +35,10 @@ header:hover {
 
 header h1 {
   color: #ffffff;
+  font-size: 1.2rem;
   position: absolute;
   left: 15px;
+  z-index: 6;
 }
 
 .links {
@@ -52,6 +54,52 @@ header h1 {
 
 .links > :hover {
   color: #ffffff;
+}
+
+.menu {
+  position: absolute;
+  right: 30px;
+  font-size: 1.3rem;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff6b;
+  backdrop-filter: blur(20px);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  z-index: 5;
+  display: none;
+}
+
+.modal a {
+  text-decoration: none;
+  color: #0000007e;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.modal a:hover {
+  color: #ffffff;
+}
+#close-modal {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: red;
 }
 
 .content {
@@ -279,32 +327,62 @@ header h1 {
     transform: translateX(-50%);
     bottom: 200px;
   }
-  .items {
-    width: 300px;
-  }
-  .content {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+  header {
+    height: 30px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
   #logo {
     width: 350px;
   }
   #main-shoes {
     width: 300px;
   }
-  .buttons {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 200px;
+
+  .item:nth-child(5) {
+    display: none;
   }
-  .items {
-    width: 250px;
+  .item:nth-child(4) {
+    display: none;
   }
   .content {
-    left: 50%;
-    transform: translateX(-50%);
+    top: 60px;
+    width: 350px;
+    height: 170px;
+  }
+  #name {
+    font-size: 1.2rem;
+  }
+  .value h3 {
+    font-size: 1rem;
+  }
+  .links {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
+@media (max-width: 375px) {
+  #logo {
+    width: 350px;
+  }
+  #main-shoes {
+    width: 300px;
+  }
+
+  .item:nth-child(3) {
+    display: none;
+  }
+  .items {
+    width: 200px;
+  }
+  .content {
+    width: 320px;
+    height: 200px;
   }
 }
